@@ -7,20 +7,38 @@ namespace ConsoleApp2
     {
         public string wyrażenie = Console.ReadLine();
         string działanie = "";
+        string[] liczby = new string[] {"nie ma tego" };
         
-        int a = 0;
-        int b = 0;
-        int c = 0;
+     
 
         
 
         public void literacja()
         {
+            string liczba = "";
             int lenght = wyrażenie.Length;
             for (int i = 0; i<lenght; i++)
             {
-                Console.Write(wyrażenie[i]);
+                string letter = wyrażenie[i].ToString();
+                if (letter == "+" | letter == "-" | letter == "*" | letter == "/" )
+                {
+                    int licznik = 0;
+                    liczby[licznik] = liczba;
+                    liczba = "";
+                    licznik += 1;
+                }
+                else
+                {
+                    liczba += letter;
+                }
+                //Console.Write(letter);
+                
             }
+            int ll = liczby.Length;
+            liczby[ll+1] = liczba;
+
+
+            Console.Write(liczby);
         }
         void liczenie()
         {
@@ -42,6 +60,12 @@ namespace ConsoleApp2
 
             }
         }
+
+        public override string ToString()
+        {
+            return liczby.ToString();
+        }
+
     }
     class Program
     {
