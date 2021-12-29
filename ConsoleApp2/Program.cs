@@ -5,7 +5,32 @@ namespace ConsoleApp2
 
     class kalkutor
     {
-        string działanie = Console.ReadLine();
+        string wyrażenie = Console.ReadLine();
+        string działanie = "";
+        int a = 0;
+        int b = 0;
+        int c = 0;
+
+        void liczenie()
+        {
+
+            if(działanie=="+")
+            {
+
+            }
+            else if (działanie == "-")
+            {
+
+            }
+            else if (działanie == "*")
+            {
+
+            }
+            else if (działanie == "/")
+            {
+
+            }
+        }
     }
     class Program
     {
