@@ -7,10 +7,18 @@ namespace ConsoleApp2
     {
         string wyrażenie = Console.ReadLine();
         string działanie = "";
+        int lenght = wyrażenie.Length;
         int a = 0;
         int b = 0;
         int c = 0;
 
+        void literacja()
+        {
+            for()
+            {
+
+            }
+        }
         void liczenie()
         {
 
