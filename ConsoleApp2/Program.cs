@@ -5,18 +5,21 @@ namespace ConsoleApp2
 
     class kalkutor
     {
-        string wyrażenie = Console.ReadLine();
+        public string wyrażenie = Console.ReadLine();
         string działanie = "";
-        int lenght = wyrażenie.Length;
+        
         int a = 0;
         int b = 0;
         int c = 0;
 
-        void literacja()
-        {
-            for()
-            {
+        
 
+        public void literacja()
+        {
+            int lenght = wyrażenie.Length;
+            for (int i = 0; i<lenght; i++)
+            {
+                Console.Write(wyrażenie[i]);
             }
         }
         void liczenie()
@@ -46,7 +49,7 @@ namespace ConsoleApp2
         {
             Console.WriteLine("W tym kalkulatorze można używać tylko liczb całkowitych i działań \'+\' \'-\' \'*\' \'/\'");
             kalkutor siema = new kalkutor();
-
+            siema.literacja();
         }
     }
 }
