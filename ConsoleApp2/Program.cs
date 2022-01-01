@@ -53,34 +53,44 @@ namespace ConsoleApp2
             }
 
         }
-        void liczenie()
+        public void liczenie()
         {
             int lenght2 = znaki.Length;
             for(int i = 0;i<lenght2; i++)
             {
-                string działanie = wyrażenie[i].ToString();
+                int where;
                 int a;
                 int b;
                 int c;
-                if (działanie == "+")
-                {
 
-                }
-                else if (działanie == "-")
-                {
+                 where = Array.IndexOf(znaki, "*");
+                //Console.WriteLine(where);
+                a = Convert.ToInt32(liczby[where]);
+                where += 1;
+                b = Convert.ToInt32(liczby[where]);
+                c = b * a;
+                
 
-                }
-                else if (działanie == "*")
-                {
-
-                }
-                else if (działanie == "/")
-                {
-
-                }
+                 where = Array.IndexOf(znaki, "/");
+                //Console.WriteLine(where);
+                a = Convert.ToInt32(liczby[where]);
+                where += 1;
+                b = Convert.ToInt32(liczby[where]);
+                
+                where = Array.IndexOf(znaki, "+");
+                //Console.WriteLine(where);
+                a = Convert.ToInt32(liczby[where]);
+                where += 1;
+                b = Convert.ToInt32(liczby[where]);
+                
+                where = Array.IndexOf(znaki, "-");
+                //Console.WriteLine(where);
+                a = Convert.ToInt32(liczby[where]);
+                where += 1;
+                b = Convert.ToInt32(liczby[where]);
             }
 
-            
+
         }
 
         public override string ToString()
@@ -96,6 +106,7 @@ namespace ConsoleApp2
             Console.WriteLine("W tym kalkulatorze można używać tylko liczb całkowitych (max 8) i działań \'+\' \'-\' \'*\' \'/\'");
             kalkutor siema = new kalkutor();
             siema.literacja();
+            siema.liczenie();
         }
     }
 }
