@@ -65,29 +65,51 @@ namespace ConsoleApp2
 
                  where = Array.IndexOf(znaki, "*");
                 //Console.WriteLine(where);
-                a = Convert.ToInt32(liczby[where]);
-                where += 1;
-                b = Convert.ToInt32(liczby[where]);
-                c = b * a;
+                if (where >= 0)
+                {
+                    a = Convert.ToInt32(liczby[where]);
+                    where += 1;
+                    b = Convert.ToInt32(liczby[where]);
+                    c = a * b;
+                    Console.WriteLine(c);
+                }
                 
 
                  where = Array.IndexOf(znaki, "/");
                 //Console.WriteLine(where);
-                a = Convert.ToInt32(liczby[where]);
-                where += 1;
-                b = Convert.ToInt32(liczby[where]);
-                
+                if (where >= 0)
+                {
+                    a = Convert.ToInt32(liczby[where]);
+                    where += 1;
+                    b = Convert.ToInt32(liczby[where]);
+                    c = a / b;
+                    Console.WriteLine(c);
+
+                }
+
                 where = Array.IndexOf(znaki, "+");
                 //Console.WriteLine(where);
-                a = Convert.ToInt32(liczby[where]);
-                where += 1;
-                b = Convert.ToInt32(liczby[where]);
+                if (where >= 0)
+                {
+                    a = Convert.ToInt32(liczby[where]);
+                    where += 1;
+                    b = Convert.ToInt32(liczby[where]);
+                    c = a + b;
+                    Console.WriteLine(c);
+                }
+                
                 
                 where = Array.IndexOf(znaki, "-");
                 //Console.WriteLine(where);
-                a = Convert.ToInt32(liczby[where]);
-                where += 1;
-                b = Convert.ToInt32(liczby[where]);
+                if(where >= 0)
+                {
+                    a = Convert.ToInt32(liczby[where]);
+                    where += 1;
+                    b = Convert.ToInt32(liczby[where]);
+                    c = a - b;
+                    Console.WriteLine(c);
+                }
+                
             }
 
 
