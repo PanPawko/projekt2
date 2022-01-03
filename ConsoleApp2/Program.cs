@@ -64,10 +64,11 @@ namespace ConsoleApp2
                 int c;
 
                  where = Array.IndexOf(znaki, "*");
-                znaki[where] = "0";
+                
                 //Console.WriteLine(where);
                 if (where >= 0)
                 {
+                    znaki[where] = "0";
                     a = Convert.ToInt32(liczby[where]);
                     liczby[where] = "0";
                     where += 1;
@@ -83,6 +84,7 @@ namespace ConsoleApp2
                 //Console.WriteLine(where);
                 if (where >= 0)
                 {
+                    znaki[where] = "0";
                     a = Convert.ToInt32(liczby[where]);
                     liczby[where] = "0";
                     where += 1;
@@ -94,23 +96,28 @@ namespace ConsoleApp2
                 }
 
                 where = Array.IndexOf(znaki, "+");
+                
                 //Console.WriteLine(where);
                 if (where >= 0)
                 {
+                    znaki[where] = "0";
                     a = Convert.ToInt32(liczby[where]);
                     liczby[where] = "0";
                     where += 1;
                     b = Convert.ToInt32(liczby[where]);
                     liczby[where] = "0";
                     c = a + b;
-                    //Console.WriteLine(c);
+                    Console.WriteLine(c);
                 }
                 
                 
                 where = Array.IndexOf(znaki, "-");
+                
                 //Console.WriteLine(where);
-                if(where >= 0)
+                if (where >= 0)
                 {
+                    znaki[where] = "0";
+                    
                     a = Convert.ToInt32(liczby[where]);
                     liczby[where] = "0";
                     where += 1;
