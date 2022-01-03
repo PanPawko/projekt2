@@ -62,7 +62,8 @@ namespace ConsoleApp2
                 int a;
                 int b;
                 int c;
-
+                string cs;
+                
                  where = Array.IndexOf(znaki, "*");
                 
                 //Console.WriteLine(where);
@@ -75,7 +76,10 @@ namespace ConsoleApp2
                     b = Convert.ToInt32(liczby[where]);
                     liczby[where] = "0";
                     c = a * b;
-                    Console.WriteLine(c);
+                    //Console.WriteLine(c);
+                    where -= 1;
+                    cs = c.ToString();
+                    liczby[where] = cs;
                 }
                 
 
@@ -92,7 +96,9 @@ namespace ConsoleApp2
                     liczby[where] = "0";
                     c = a / b;
                     //Console.WriteLine(c);
-
+                    where -= 1;
+                    cs = c.ToString();
+                    liczby[where] = cs;
                 }
 
                 where = Array.IndexOf(znaki, "+");
@@ -107,7 +113,14 @@ namespace ConsoleApp2
                     b = Convert.ToInt32(liczby[where]);
                     liczby[where] = "0";
                     c = a + b;
-                    Console.WriteLine(c);
+                    for(int x = 0;x<=lenght2-(where+1);x++)
+                    {
+                        Console.WriteLine(znaki[x]);
+                    }
+                    //Console.WriteLine(c);
+                    where -= 1;
+                    cs = c.ToString();
+                    liczby[where] = cs;
                 }
                 
                 
@@ -125,6 +138,9 @@ namespace ConsoleApp2
                     liczby[where] = "0";
                     c = a - b;
                     //Console.WriteLine(c);
+                    where -= 1;
+                    cs = c.ToString();
+                    liczby[where] = cs;
                 }
                 
             }
