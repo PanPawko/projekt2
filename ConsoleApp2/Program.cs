@@ -115,7 +115,7 @@ namespace ConsoleApp2
                     c = a + b;
                     for(int x = 0;x<=lenght2-(where+1);x++)
                     {
-                        Console.WriteLine(znaki[x]);
+                        //Console.WriteLine(znaki[x]);
                     }
                     //Console.WriteLine(c);
                     where -= 1;
