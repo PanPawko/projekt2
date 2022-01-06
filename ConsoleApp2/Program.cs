@@ -3,14 +3,14 @@
 namespace ConsoleApp2
 {
 
-    class kalkutor
+    class Kalkutor
     {
         public string wyrażenie = Console.ReadLine();
         
         string[] liczby = new string[8];
         string[] znaki = new string[7];
         
-        public kalkutor()
+        public Kalkutor()
         {
            
         }
@@ -122,7 +122,7 @@ namespace ConsoleApp2
                 //Console.WriteLine(where);
                 if (where >= 0)
                 {
-                    int d = where;
+                    int d = where+1;
                     int e;
                     znaki[where] = "0";
                     a = Convert.ToInt32(liczby[where]);
@@ -132,35 +132,38 @@ namespace ConsoleApp2
                     liczby[where] = "0";
                     e = where+1;
                     c = a + b;
-                    for(int x = 0;x<lenght2-1;x++)
+                    for (int x = 0; x < lenght2 - 1; x++)
                     {
-                        d += 1;
+
                         przesuwanie = znaki[d];
                         znaki[d] = usuwanie;
-                        where -= 1;
+                        d -= 1;
                         znaki[d] = przesuwanie;
-                        where += 2;
+                        d += 2;
 
-                        Console.WriteLine(znaki[x]);
+                        //Console.WriteLine(znaki[x]);
                     }
-                    for(int x = 0;x<lenght-3; x++)
+                    for (int x = 0; x < lenght - 3; x++)
                     {
-                        
+
                         przesuwanie = liczby[e];
-                        liczby[e] = usuwanie;
+
+                        //liczby[e] = usuwanie;
                         e -= 1;
                         znaki[e] = przesuwanie;
                         e += 2;
 
                         Console.WriteLine(liczby[x]);
                     }
-                    Console.WriteLine(c);
+                    //Console.WriteLine(c);
                     where -= 1;
                     cs = c.ToString();
                     liczby[where] = cs;
+                    Console.WriteLine(liczby[0]);
+
                 }
-                
-                
+
+
                 where = Array.IndexOf(znaki, "-");
                 
                 //Console.WriteLine(where);
@@ -196,7 +199,7 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
             Console.WriteLine("W tym kalkulatorze można używać tylko liczb całkowitych (max 8) i działań \'+\' \'-\' \'*\' \'/\'");
-            kalkutor siema = new kalkutor();
+            Kalkutor siema = new Kalkutor();
             siema.literacja();
             siema.liczenie();
         }
