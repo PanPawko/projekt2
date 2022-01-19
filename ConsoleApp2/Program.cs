@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleApp2
 {
@@ -7,26 +8,15 @@ namespace ConsoleApp2
     {
         public string wyrażenie = Console.ReadLine();
         
-        string[] liczby = new string[8];
-        string[] znaki = new string[7];
+        List<string> liczby = new List<string>();
+        List<string> znaki = new List<string>();
         
         public Kalkutor()
         {
            
         }
 
-        void wypełnianie()
-        {
-            for(int i = 0;i<liczby.Length; i++)
-            {
-                liczby[i] = "0";
-            }
-
-            for (int i = 0; i < znaki.Length; i++)
-            {
-                znaki[i] = "0";
-            }
-        }
+       
 
         public void literacja()
         {
@@ -66,9 +56,9 @@ namespace ConsoleApp2
         }
         public void liczenie()
         {
-            int lenght = wyrażenie.Length;
-            int lenght2 = znaki.Length;
-
+            //int lenght = wyrażenie.Length;
+            int lenght2 = znaki.Count;
+            
             for(int i = 0;i<lenght2; i++)
             {
                 int where;
@@ -80,7 +70,7 @@ namespace ConsoleApp2
                 string usuwanie = "0";
 
 
-                 where = Array.IndexOf(znaki, "*");
+                where = znaki.BinarySearch("*");
                 
                 //Console.WriteLine(where);
                 if (where >= 0)
@@ -99,8 +89,8 @@ namespace ConsoleApp2
                 }
                 
 
-                 where = Array.IndexOf(znaki, "/");
-                
+                 where = znaki.BinarySearch("/");
+
                 //Console.WriteLine(where);
                 if (where >= 0)
                 {
@@ -117,22 +107,22 @@ namespace ConsoleApp2
                     liczby[where] = cs;
                 }
 
-                where = Array.IndexOf(znaki, "+");
-                
+                where = znaki.BinarySearch("+");
+
                 //Console.WriteLine(where);
                 if (where >= 0)
                 {
                     int d = where+1;
                     int e;
-                    znaki[where] = "0";
+                    znaki.RemoveAt(where);
                     a = Convert.ToInt32(liczby[where]);
-                    liczby[where] = "0";
+                    liczby.RemoveAt(where);
                     where += 1;
                     b = Convert.ToInt32(liczby[where]);
-                    liczby[where] = "0";
+                    liczby.RemoveAt(where);
                     e = where+1;
                     c = a + b;
-                    for (int x = 0; x < lenght2 - 1; x++)
+                    /*for (int x = 0; x < lenght2 - 1; x++)
                     {
 
                         przesuwanie = znaki[d];
@@ -154,18 +144,18 @@ namespace ConsoleApp2
                         e += 2;
 
                         Console.WriteLine(liczby[x]);
-                    }
+                    }*/
                     //Console.WriteLine(c);
                     where -= 1;
                     cs = c.ToString();
-                    liczby[where] = cs;
+                    liczby.Insert(where, cs); 
                     Console.WriteLine(liczby[0]);
 
                 }
 
 
-                where = Array.IndexOf(znaki, "-");
-                
+                where = znaki.BinarySearch("-");
+
                 //Console.WriteLine(where);
                 if (where >= 0)
                 {
