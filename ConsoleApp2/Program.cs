@@ -75,36 +75,42 @@ namespace ConsoleApp2
                 //Console.WriteLine(where);
                 if (where >= 0)
                 {
-                    znaki[where] = "0";
-                    a = Convert.ToInt32(liczby[where]);
-                    liczby[where] = "0";
-                    where += 1;
-                    b = Convert.ToInt32(liczby[where]);
-                    liczby[where] = "0";
-                    c = a * b;
-                    //Console.WriteLine(c);
-                    where -= 1;
-                    cs = c.ToString();
-                    liczby[where] = cs;
-                }
-                
+                    znaki.RemoveAt(where);
 
-                 where = znaki.BinarySearch("/");
+
+                    a = Convert.ToInt32(liczby[where]);
+                    liczby.RemoveAt(where);
+
+                    b = Convert.ToInt32(liczby[where]);
+                    liczby.RemoveAt(where);
+
+                    c = a * b;
+
+                    cs = c.ToString();
+                    liczby.Insert(where, cs);
+                    //Console.WriteLine(liczby[0]);
+                }
+
+
+                where = znaki.BinarySearch("/");
 
                 //Console.WriteLine(where);
                 if (where >= 0)
                 {
-                    znaki[where] = "0";
+                    znaki.RemoveAt(where);
+
+
                     a = Convert.ToInt32(liczby[where]);
-                    liczby[where] = "0";
-                    where += 1;
+                    liczby.RemoveAt(where);
+
                     b = Convert.ToInt32(liczby[where]);
-                    liczby[where] = "0";
+                    liczby.RemoveAt(where);
+
                     c = a / b;
-                    //Console.WriteLine(c);
-                    where -= 1;
+
                     cs = c.ToString();
-                    liczby[where] = cs;
+                    liczby.Insert(where, cs);
+                    //Console.WriteLine(liczby[0]);
                 }
 
                 where = znaki.BinarySearch("+");
@@ -112,50 +118,18 @@ namespace ConsoleApp2
                 //Console.WriteLine(where);
                 if (where >= 0)
                 {
-                    int d = where+1;
-                    int e;
+                    
                     znaki.RemoveAt(where);
-                    /*foreach (string ell in znaki)
-                    {
-                        Console.WriteLine(ell);
-                    }
-                    foreach (string el in liczby)
-                    {
-                        Console.WriteLine(el);
-                    }*/
+                    
 
                     a = Convert.ToInt32(liczby[where]);
                     liczby.RemoveAt(where);
-                    //where += 1;
+                    
                     b = Convert.ToInt32(liczby[where]);
                     liczby.RemoveAt(where);
-                   /* e = where+1;*/
+                   
                     c = a + b;
-                    /*for (int x = 0; x < lenght2 - 1; x++)
-                    {
-
-                        przesuwanie = znaki[d];
-                        znaki[d] = usuwanie;
-                        d -= 1;
-                        znaki[d] = przesuwanie;
-                        d += 2;
-
-                        //Console.WriteLine(znaki[x]);
-                    }
-                    for (int x = 0; x < lenght - 3; x++)
-                    {
-
-                        przesuwanie = liczby[e];
-
-                        //liczby[e] = usuwanie;
-                        e -= 1;
-                        znaki[e] = przesuwanie;
-                        e += 2;
-
-                        Console.WriteLine(liczby[x]);
-                    }*/
-                    //Console.WriteLine(c);
-                    //where -= 1;
+                   
                     cs = c.ToString();
                     liczby.Insert(where, cs); 
                     //Console.WriteLine(liczby[0]);
@@ -168,20 +142,22 @@ namespace ConsoleApp2
                 //Console.WriteLine(where);
                 if (where >= 0)
                 {
-                    znaki[where] = "0";
-                    
+                    znaki.RemoveAt(where);
+
+
                     a = Convert.ToInt32(liczby[where]);
-                    liczby[where] = "0";
-                    where += 1;
+                    liczby.RemoveAt(where);
+
                     b = Convert.ToInt32(liczby[where]);
-                    liczby[where] = "0";
+                    liczby.RemoveAt(where);
+
                     c = a - b;
-                    //Console.WriteLine(c);
-                    where -= 1;
+
                     cs = c.ToString();
-                    liczby[where] = cs;
+                    liczby.Insert(where, cs);
+                    //Console.WriteLine(liczby[0]);
                 }
-                
+
             }
 
             
@@ -202,7 +178,7 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("W tym kalkulatorze można używać tylko liczb całkowitych (max 8) i działań \'+\' \'-\' \'*\' \'/\'");
+            Console.WriteLine("W tym kalkulatorze można używać tylko liczb całkowitych i działań \'+\' \'-\' \'*\' \'/\'");
             Kalkutor siema = new Kalkutor();
             siema.literacja();
             siema.liczenie();
