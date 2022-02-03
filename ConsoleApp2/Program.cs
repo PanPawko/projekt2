@@ -40,18 +40,10 @@ namespace ConsoleApp2
                 //Console.Write(letter);
                 
             }
-            //int ll = liczby.Length;
+           
             liczby.Add(liczba);
-            //Console.WriteLine(ll);
+            
 
-            /*foreach (string i in liczby)
-            {
-                Console.WriteLine(i);
-            }
-            foreach (string i in znaki)
-            {
-                Console.WriteLine(i);
-            }*/
 
         }
         public void liczenie()
