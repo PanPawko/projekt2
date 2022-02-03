@@ -28,8 +28,8 @@ namespace ConsoleApp2
                 string letter = wyrażenie[i].ToString();
                 if (letter == "+" | letter == "-" | letter == "*" | letter == "/" )
                 {
-                    znaki[licznik] = letter;
-                    liczby[licznik] = liczba;
+                    znaki.Add(letter);
+                    liczby.Add(liczba);
                     liczba = "";
                     licznik += 1;
                 }
@@ -41,7 +41,7 @@ namespace ConsoleApp2
                 
             }
             //int ll = liczby.Length;
-            liczby[licznik] = liczba;
+            liczby.Add(liczba);
             //Console.WriteLine(ll);
 
             /*foreach (string i in liczby)
@@ -115,12 +115,21 @@ namespace ConsoleApp2
                     int d = where+1;
                     int e;
                     znaki.RemoveAt(where);
+                    /*foreach (string ell in znaki)
+                    {
+                        Console.WriteLine(ell);
+                    }
+                    foreach (string el in liczby)
+                    {
+                        Console.WriteLine(el);
+                    }*/
+
                     a = Convert.ToInt32(liczby[where]);
                     liczby.RemoveAt(where);
-                    where += 1;
+                    //where += 1;
                     b = Convert.ToInt32(liczby[where]);
                     liczby.RemoveAt(where);
-                    e = where+1;
+                   /* e = where+1;*/
                     c = a + b;
                     /*for (int x = 0; x < lenght2 - 1; x++)
                     {
@@ -146,10 +155,10 @@ namespace ConsoleApp2
                         Console.WriteLine(liczby[x]);
                     }*/
                     //Console.WriteLine(c);
-                    where -= 1;
+                    //where -= 1;
                     cs = c.ToString();
                     liczby.Insert(where, cs); 
-                    Console.WriteLine(liczby[0]);
+                    //Console.WriteLine(liczby[0]);
 
                 }
 
@@ -175,7 +184,12 @@ namespace ConsoleApp2
                 
             }
 
+            
+        }
 
+        public void wypisywanie()
+        {
+            Console.WriteLine(liczby[0]);
         }
 
         public override string ToString()
@@ -192,6 +206,7 @@ namespace ConsoleApp2
             Kalkutor siema = new Kalkutor();
             siema.literacja();
             siema.liczenie();
+            siema.wypisywanie();
         }
     }
 }
